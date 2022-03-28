@@ -18,14 +18,50 @@
 // 0. Global styles
 // --------------------
 
-// Note: this seems to overwrite styles of base.scss,
-// which in itself is a custom stylesheet not included
-// in a default Consul install
+body .top-bar-title {
+  background: #fff;
 
-// This expands upon styles in base.scss,
-// which expands upon styles in layout.scss
+  &::before {
+    background: #fff;
+  }
+}
 
-@import "custom/headers";
+.footer-image {
+  display: none;
+}
+
+.debate-new .header,
+.proposal-form .header,
+.budget-investment-new .header {
+  h1, h2 {
+    @include breakpoint(medium) {
+      padding-right: rem-calc(200);
+    }
+
+    @include breakpoint(large) {
+      padding-right: rem-calc(240);
+    }
+  }
+
+  @include breakpoint(large) {
+    .header-icon ~ h1, .header-icon ~ h2 {
+      padding-right: rem-calc(360);
+    }
+
+    .header-icon, &.header-single-heading .header-icon {
+      top: calc(50% - #{rem-calc(30)});
+    }
+  }
+
+  @include breakpoint(medium) {
+    &.header-single-heading::after, &::after {
+      padding-top: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+}
 
 .input-group-button {
   button,
@@ -2504,8 +2540,6 @@ footer {
   }
 }
 
-// We need the !important to override the !important
-// set by gems/foundation-rails-6.6.1.0/vendor/assets/scss/typography/_base.scss
 h1, .h1,
 h2, .h2,
 h3, .h3,
@@ -2513,4 +2547,12 @@ h4, .h4,
 h5, .h5,
 h6, .h6 {
   font-family: inherit !important;
+}
+
+.debate .panel h3 a {
+  color: $brand-light;
+
+  &:hover {
+    color: $brand;
+  }
 }
