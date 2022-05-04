@@ -23,6 +23,10 @@ body {
   .top-bar-title {
     background: #fff;
 
+    a {
+      height: auto;
+    }
+
     &::before {
       background: #fff;
     }
@@ -130,6 +134,28 @@ h6,
   }
 }
 
+.subnavigation .dropdown {
+
+  &.menu > li {
+
+    &.is-dropdown-submenu-parent > a {
+
+      &::before {
+        border-color: #fff transparent transparent;
+      }
+    }
+  }
+
+  .is-dropdown-submenu a {
+    color: $text;
+  }
+}
+
+.top-bar .menu > li a,
+.top-bar .menu > li .button {
+  font-weight: normal;
+}
+
 .subnavigation {
   background: $brand;
 
@@ -226,6 +252,7 @@ h6,
   p {
 
     &:last-child {
+      color: $text;
       text-decoration: underline;
     }
   }
@@ -529,7 +556,7 @@ h6,
 }
 
 .debate .panel h3 a {
-  color: $brand-light;
+  color: $text;
 
   &:hover {
     color: $brand;
