@@ -194,6 +194,7 @@ describe "Voter" do
     end
 
     scenario "Voting in poll and then verifiying account" do
+      Zipcode.create!(code: "28013")
       user = create(:user)
 
       login_through_form_as_officer(officer.user)
