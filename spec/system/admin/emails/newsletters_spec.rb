@@ -82,7 +82,9 @@ describe "Admin newsletter emails", :admin do
 
     visit edit_admin_newsletter_path(newsletter)
 
-    expect(page).to have_css(".cke_toolbar .cke_button__image_icon")
+    within("#cke_newsletter_body") do
+      expect(page).to have_css(".cke_button__image_icon")
+    end
 
     visit admin_newsletters_path
     within("#newsletter_#{newsletter.id}") do
@@ -93,6 +95,17 @@ describe "Admin newsletter emails", :admin do
       expect(page).to have_css "img[src$='image.jpg']"
       expect(page).to have_css "img[alt='Image title']"
     end
+
+    visit admin_newsletter_path(newsletter)
+
+    accept_confirm { click_link "Send" }
+
+    expect(page).to have_content "Newsletter sent successfully"
+
+    email = open_last_email
+
+    expect(email).to have_css "img[src$='image.jpg']"
+    expect(email).to have_css "img[alt='Image title']"
   end
 
   scenario "Update" do
