@@ -18,7 +18,6 @@ es:
       edit: Editar
       configure: Configurar
       delete: Borrar
-      confirm_delete: "¿Estás seguro? Esta acción borrará %{resource_name} '%{name}' y no se puede deshacer."
     officing_booth:
       title: "Estás ahora mismo en la mesa ubicada en %{booth}. Si esto no es correcto no sigas adelante y llama al teléfono de incidencias. Gracias."
     banners:
@@ -1389,14 +1388,6 @@ es:
         feature_flags: Funcionalidades
         features:
           enabled: "Activada"
-        map:
-          title: Configuración del mapa
-          help: Aquí puedes personalizar la manera en la que se muestra el mapa a los usuarios. Arrastra el marcador o pulsa sobre cualquier parte del mapa, ajusta el zoom y pulsa el botón 'Actualizar'.
-          flash:
-            update: La configuración del mapa se ha guardado correctamente.
-          form:
-            submit: Actualizar
-          how_to_enable: 'Para mostrar el mapa a los usuarios se debe de activar "Geolocalización de propuestas y proyectos de gasto" en la pestaña "Funcionalidades".'
         dashboard:
           title: Panel de progreso de propuestas
         remote_census:

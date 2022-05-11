@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_03_112944) do
+ActiveRecord::Schema.define(version: 2022_02_03_110757) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_trgm"
@@ -321,6 +321,7 @@ ActiveRecord::Schema.define(version: 2021_11_03_112944) do
     t.text "summary"
     t.string "name"
     t.string "main_link_text"
+    t.string "main_button_text"
     t.string "main_link_url"
     t.index ["budget_phase_id"], name: "index_budget_phase_translations_on_budget_phase_id"
     t.index ["locale"], name: "index_budget_phase_translations_on_locale"
@@ -333,6 +334,7 @@ ActiveRecord::Schema.define(version: 2021_11_03_112944) do
     t.datetime "starts_at"
     t.datetime "ends_at"
     t.boolean "enabled", default: true
+    t.string "main_button_url"
     t.index ["ends_at"], name: "index_budget_phases_on_ends_at"
     t.index ["kind"], name: "index_budget_phases_on_kind"
     t.index ["next_phase_id"], name: "index_budget_phases_on_next_phase_id"
@@ -354,6 +356,7 @@ ActiveRecord::Schema.define(version: 2021_11_03_112944) do
     t.datetime "updated_at", null: false
     t.string "name"
     t.string "main_link_text"
+    t.string "main_button_text"
     t.string "main_link_url"
     t.index ["budget_id"], name: "index_budget_translations_on_budget_id"
     t.index ["locale"], name: "index_budget_translations_on_locale"
@@ -399,6 +402,7 @@ ActiveRecord::Schema.define(version: 2021_11_03_112944) do
     t.text "description_informing"
     t.string "voting_style", default: "knapsack"
     t.boolean "published"
+    t.string "main_button_url"
     t.boolean "hide_money", default: false
   end
 
@@ -946,14 +950,14 @@ ActiveRecord::Schema.define(version: 2021_11_03_112944) do
     t.index ["proposal_id"], name: "index_map_locations_on_proposal_id"
   end
 
-  create_table "maps", force: :cascade do |t|
+  create_table "maps", id: :serial, force: :cascade do |t|
     t.integer "budget_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["budget_id"], name: "index_maps_on_budget_id"
   end
 
-  create_table "milestone_statuses", force: :cascade do |t|
+  create_table "milestone_statuses", id: :serial, force: :cascade do |t|
     t.string "name"
     t.text "description"
     t.datetime "hidden_at"
@@ -1750,6 +1754,7 @@ ActiveRecord::Schema.define(version: 2021_11_03_112944) do
     t.integer "cardable_id"
     t.integer "columns", default: 4
     t.string "cardable_type", default: "SiteCustomization::Page"
+    t.boolean "background_image", default: false
     t.index ["cardable_id"], name: "index_widget_cards_on_cardable_id"
   end
 

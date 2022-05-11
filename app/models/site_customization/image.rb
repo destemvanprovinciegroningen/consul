@@ -15,17 +15,19 @@ class SiteCustomization::Image < ApplicationRecord
     "welcome/step_1" => [270, 240],
     "welcome/step_2" => [270, 240],
     "welcome/step_3" => [270, 240],
-    "bg_footer" => [1200, 300],
+    "welcome_process" => [370, 185],
     "auth_bg" => [934, 1398],
+    "bg_footer" => [1200, 300],
+    "logo_footer" => [260, 80],
     "favicon" => [16, 16]
   }.freeze
 
-  VALID_MIME_TYPES = %W[
+  VALID_MIME_TYPES = %w[
     image/png
     image/jpeg
     image/x-icon
     image/vnd.microsoft.icon
-  ]
+  ].freeze
 
   has_attachment :image
 

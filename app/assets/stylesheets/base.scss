@@ -21,6 +21,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
 @import "font-awesome/icons";
 
+html {
+  font-size: unset;
+}
+
 body,
 h1,
 h2,
@@ -454,15 +458,13 @@ body > header,
 .wrapper > header {
   background: none;
   border-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .top-bar {
   background: #fff !important;
   justify-content: space-between;
-
-  .menu {
-    border-bottom: 0;
-  }
 
   .menu > li {
 
@@ -552,6 +554,10 @@ body > header,
       }
     }
   }
+
+  .menu {
+    padding-left: $line-height / 2;
+  }
 }
 
 .menu-icon {
@@ -575,6 +581,7 @@ body > header,
 
 .menu-button {
   color: $brand;
+  margin-left: $line-height / 4;
 }
 
 .subnavigation {
@@ -688,9 +695,12 @@ body > header,
   }
 }
 
-.dropdown.menu > li.is-dropdown-submenu-parent > a::after {
-  border-top-color: transparent;
-  margin-top: -8px;
+.dropdown.menu > li {
+
+  &.is-dropdown-submenu-parent > a::after {
+    border-top-color: transparent;
+    margin-top: -8px;
+  }
 }
 
 .top-bar {
@@ -723,12 +733,12 @@ body > header,
 
   .jumbo {
     background: none;
-    background-size: 0;
 
     @include breakpoint(large) {
       background: none;
-      background-position: 85% 30%;
+      background-position: 100% 30%;
       background-repeat: no-repeat;
+      background-size: contain;
       margin-top: $line-height * 2;
       min-height: $line-height * 20;
     }
@@ -740,11 +750,6 @@ body > header,
         font-size: rem-calc(60);
       }
     }
-  }
-
-  .lead {
-    font-weight: bold;
-    margin: $line-height * 2 0;
   }
 
   h2,
@@ -1037,6 +1042,7 @@ footer {
   }
 
   .social {
+    width: auto;
 
     [class^="fa"] {
       color: $footer;
@@ -1156,6 +1162,12 @@ footer {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+
+    @include breakpoint(large) {
+      margin-left: calc(#{$global-width / 2} - 50vw);
+      margin-right: calc(#{$global-width / 2} - 50vw);
+      overflow-x: hidden;
+    }
   }
 
   &.groups {
@@ -1260,7 +1272,7 @@ footer {
       }
 
       &:hover {
-       color: $white;
+        color: $white;
 
         &::after {
           border-left-color: $dark;
@@ -1734,6 +1746,7 @@ footer {
 }
 
 .legislation-process-list {
+  border-bottom: 0;
 
   h3 {
     color: $label;
@@ -1871,6 +1884,18 @@ footer {
   margin-top: $line-height * 2;
   height: 100%;
   position: relative;
+}
+
+.draft-panels .draft-allegation .calc-comments {
+
+  .comments-box-container {
+    top: rem-calc(100) !important;
+  }
+
+  .comment-box .comment-input {
+    border-bottom: 0;
+    padding-bottom: 0;
+  }
 }
 
 .comments-box-container .comment-meta .comment-votes {
@@ -2149,6 +2174,22 @@ footer {
   font-size: $small-font-size;
   min-height: 0;
   min-width: 0;
+}
+
+.admin {
+
+  .top-links {
+    justify-content: right;
+
+    a {
+      flex-grow: unset;
+    }
+  }
+
+  .top-links .locale,
+  .top-bar h1 {
+    padding-left: $line-height / 2;
+  }
 }
 
 .ui-datepicker-calendar thead tr th {
@@ -2536,6 +2577,13 @@ footer {
   }
 }
 
+.proposal-dashboard .button {
+
+  &.expanded {
+    word-break: break-word;
+  }
+}
+
 // 11. Polls
 // --------------------
 
@@ -2758,6 +2806,10 @@ footer {
     margin: 0;
     margin-bottom: $line-height / 2;
   }
+}
+
+.verification button {
+  min-height: 0;
 }
 
 // 13. Custom
@@ -3200,7 +3252,6 @@ footer {
 
       &.current-phase {
         background: $brand-secondary;
-        background: red;
         color: #fff;
 
         &::after {
@@ -3228,6 +3279,12 @@ footer {
         left: 6px;
         top: 6px;
       }
+    }
+  }
+
+  .budget-phase {
+    @include breakpoint(medium) {
+      width: auto;
     }
   }
 
@@ -3414,6 +3471,10 @@ footer {
   .orbit-previous {
     background: rgba(34, 34, 34, 0.25);
   }
+}
+
+.orbit-bullets button {
+  min-height: 0;
 }
 
 .sdg-related-list-selector {

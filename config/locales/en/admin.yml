@@ -813,6 +813,7 @@ en:
       comments: "Comments"
       local_census_records: Manage local census
       machine_learning: "AI / Machine learning"
+      maps: "Maps"
     administrators:
       index:
         title: Administrators
@@ -1341,9 +1342,6 @@ en:
         feature_flags: Features
         features:
           enabled: "Enabled"
-        map:
-          form:
-            submit: "Update"
         dashboard:
           title: Proposals dashboard
         remote_census:
