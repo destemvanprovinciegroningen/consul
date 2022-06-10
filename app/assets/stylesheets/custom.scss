@@ -12,7 +12,6 @@
 // 10. Proposals
 // 11. Polls
 // 12. Icons
-// 13. Users
 //
 
 // 0. Global styles
@@ -23,8 +22,11 @@ body {
   .top-bar-title {
     background: #fff;
 
-    a {
-      height: auto;
+    @include breakpoint(large) {
+
+      a {
+        height: auto;
+      }
     }
 
     &::before {
@@ -376,6 +378,20 @@ h6,
 
 .budget-phases {
 
+  .tabs-title {
+
+    &.current-phase-tab [aria-selected="true"] {
+      color: $text;
+    }
+  }
+
+  .phase-title {
+
+    &.current-phase-tab a {
+      color: $text;
+    }
+  }
+
   .tabs-title > a {
 
     &:hover {
@@ -400,6 +416,7 @@ h6,
       background: $brand;
 
       &::after {
+        border-bottom: 84px solid transparent;
         border-left-color: $brand;
       }
     }
@@ -438,6 +455,8 @@ h6,
       top: 19px;
     }
   }
+
+
 }
 
 .groups-and-headings .heading {
@@ -657,42 +676,5 @@ h6,
 
   &::before {
     top: 7px;
-  }
-}
-
-// 13. Users
-// --------------------
-
-// Remove this section after upgrade to 1.4.1
-.debate-new .header,
-.proposal-form .header,
-.budget-investment-new .header {
-  h1, h2 {
-    @include breakpoint(medium) {
-      padding-right: rem-calc(200);
-    }
-
-    @include breakpoint(large) {
-      padding-right: rem-calc(240);
-    }
-  }
-
-  @include breakpoint(large) {
-    .header-icon ~ h1, .header-icon ~ h2 {
-      padding-right: rem-calc(360);
-    }
-
-    .header-icon, &.header-single-heading .header-icon {
-      top: calc(50% - #{rem-calc(30)});
-    }
-  }
-
-  @include breakpoint(medium) {
-    &.header-single-heading::after, &::after {
-      padding-top: 0;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
   }
 }

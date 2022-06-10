@@ -1,7 +1,5 @@
 en:
   mailers:
-    budget_investment_created:
-      share_button: "Share your project"
     budget_investment_selected:
       title: Congratulations, your idea will go to the voting!
       share: The Coöperatieve Wijkraad has looked at all the submitted ideas, and looked at how much they will cost. Congratulations, your idea for the Oosterparkwijk is feasible! You can now start your campaign. Share your idea on social media and with your neighbours.<br>Very much success!
@@ -9,5 +7,3 @@ en:
       contact: Do you have any questions or do you want help with your idea? Mail to %{email}, we'd be happy to think along with you.
     direct_message_for_receiver:
       title: You've received a new private message.
-    comment:
-      new_comment_by_html: "There is a new reaction to your idea."

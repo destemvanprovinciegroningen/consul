@@ -321,7 +321,6 @@ ActiveRecord::Schema.define(version: 2022_02_03_110757) do
     t.text "summary"
     t.string "name"
     t.string "main_link_text"
-    t.string "main_button_text"
     t.string "main_link_url"
     t.index ["budget_phase_id"], name: "index_budget_phase_translations_on_budget_phase_id"
     t.index ["locale"], name: "index_budget_phase_translations_on_locale"
@@ -334,6 +333,7 @@ ActiveRecord::Schema.define(version: 2022_02_03_110757) do
     t.datetime "starts_at"
     t.datetime "ends_at"
     t.boolean "enabled", default: true
+    t.string "main_button_text"
     t.string "main_button_url"
     t.index ["ends_at"], name: "index_budget_phases_on_ends_at"
     t.index ["kind"], name: "index_budget_phases_on_kind"
@@ -356,7 +356,6 @@ ActiveRecord::Schema.define(version: 2022_02_03_110757) do
     t.datetime "updated_at", null: false
     t.string "name"
     t.string "main_link_text"
-    t.string "main_button_text"
     t.string "main_link_url"
     t.index ["budget_id"], name: "index_budget_translations_on_budget_id"
     t.index ["locale"], name: "index_budget_translations_on_locale"
@@ -401,7 +400,8 @@ ActiveRecord::Schema.define(version: 2022_02_03_110757) do
     t.text "description_publishing_prices"
     t.text "description_informing"
     t.string "voting_style", default: "knapsack"
-    t.boolean "published"
+    t.boolean "published", default: true
+    t.string "main_button_text"
     t.string "main_button_url"
     t.boolean "hide_money", default: false
   end
@@ -950,14 +950,14 @@ ActiveRecord::Schema.define(version: 2022_02_03_110757) do
     t.index ["proposal_id"], name: "index_map_locations_on_proposal_id"
   end
 
-  create_table "maps", id: :serial, force: :cascade do |t|
+  create_table "maps", force: :cascade do |t|
     t.integer "budget_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["budget_id"], name: "index_maps_on_budget_id"
   end
 
-  create_table "milestone_statuses", id: :serial, force: :cascade do |t|
+  create_table "milestone_statuses", force: :cascade do |t|
     t.string "name"
     t.text "description"
     t.datetime "hidden_at"
