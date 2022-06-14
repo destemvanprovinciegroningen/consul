@@ -510,6 +510,15 @@ h6,
   }
 }
 
+.budget-info,
+.budget-investment-index-list {
+
+  h2 {
+    font-size: rem-calc(20);
+    margin: $line-height / 2 0;
+  }
+}
+
 // 5. Legislation
 // --------------------
 
