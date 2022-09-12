@@ -10,6 +10,7 @@ nl:
       sincerely: ""
       share: "Deel"
     config:
+      notifications_link: "Mijn profiel"
       manage_email_subscriptions: "Wil je dit soort mails niet meer ontvangen? Verander dan hier je instellingen"
     budget_investment_selected:
       subject: "Gefeliciteerd, idee '%{code}' gaat door naar de stemronde!"
@@ -44,8 +45,7 @@ nl:
     direct_message_for_receiver:
       subject: "Je hebt een nieuw privébericht ontvangen"
       title: "Je hebt een nieuw privébericht ontvangen."
-      unsubscribe: "Als je geen directe boodschappen wilt ontvangen, kijk dan eens bij %{account} en haal het vinkje weg bij 'ontvangen e-mails over directe berichten'."
-      unsubscribe_account: "Mijn profiel"
+      unsubscribe_text: "Als je geen directe boodschappen wilt ontvangen, kijk dan eens bij %{notifications} en haal het vinkje weg bij 'ontvangen e-mails over directe berichten'."
     direct_message_for_sender:
       subject: "Je hebt een privébericht gestuurd"
       title: "Je hebt een privébericht gestuurd"
