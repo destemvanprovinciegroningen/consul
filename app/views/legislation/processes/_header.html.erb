@@ -56,6 +56,8 @@
         <% else %>
           <%= render "legislation/processes/header_full", process: @process %>
         <% end %>
+
+        <%= render "shared/legislation_video", process: @process %>
       </div>
 
       <aside class="small-12 medium-3 column">
