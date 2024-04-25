@@ -87,7 +87,7 @@ describe "Welcome page" do
       expect(page).to have_content "Share"
       expect(page).to have_content "Keep up with the ideas that matter to you the most, and share them "\
                                    "through social media."
-      expect(page).to have_link "Another optional call to action"
+      expect(page).not_to have_link "Another optional call to action"
     end
   end
 
