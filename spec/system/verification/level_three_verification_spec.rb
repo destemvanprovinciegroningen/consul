@@ -9,7 +9,10 @@ feature "Level three verification" do
   scenario "Verification with correct residency zipcode" do
     user = create(:user)
 
-    create(:verified_user, document_number: "12345678Z", document_type: "1")
+    verified_user = create(:verified_user,
+                           document_number: "12345678Z",
+                           document_type: "1",
+                           phone: "611111111")
 
     login_as(user)
 
@@ -31,7 +34,10 @@ feature "Level three verification" do
   scenario "Verification with wrong residency zipcode" do
     user = create(:user)
 
-    create(:verified_user, document_number: "12345678Z", document_type: "1")
+    verified_user = create(:verified_user,
+                           document_number: "12345678Z",
+                           document_type: "1",
+                           email: "rock@example.com")
 
     login_as(user)
 
@@ -51,7 +57,7 @@ feature "Level three verification" do
     expect(page).not_to have_content "Account verified"
   end
 
-  scenario "Verification using an already registered document number" do
+  scenario "Verification using an already registered document number", :consul do
     create(:user, document_number: "12345678Z", document_type: "1")
 
     user = create(:user)
@@ -72,7 +78,9 @@ feature "Level three verification" do
 
     click_button "new_residence_submit"
 
-    expect(page).to have_css ".form-error", text: "has already been taken"
-    expect(page).not_to have_content "Account verified"
+    expect(page).to have_content "Thank you for requesting your maximum security code " \
+                                 "(only required for the final votes). In a few days " \
+                                 "we will send it to the address featuring in the data " \
+                                 "we have on file."
   end
 end
