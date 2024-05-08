@@ -57,7 +57,7 @@ feature "Level three verification" do
     expect(page).not_to have_content "Account verified"
   end
 
-  scenario "Verification using an already registered document number" do
+  scenario "Verification using an already registered document number", :consul do
     create(:user, document_number: "12345678Z", document_type: "1")
 
     user = create(:user)

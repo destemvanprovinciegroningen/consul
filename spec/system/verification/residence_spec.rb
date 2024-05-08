@@ -105,7 +105,7 @@ describe "Residence" do
     expect(page).to have_content "Citizens from this postal code cannot participate"
   end
 
-  scenario "Error on census" do
+  scenario "Error on census", :consul do
     user = create(:user)
     login_as(user)
 
@@ -125,7 +125,7 @@ describe "Residence" do
     expect(page).to have_content "The Census was unable to verify your information"
   end
 
-  scenario "5 tries allowed" do
+  scenario "5 tries allowed", :consul do
     user = create(:user)
     login_as(user)
 
