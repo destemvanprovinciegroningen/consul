@@ -1,3 +1,5 @@
+<% provide :title do %><%= @user.name %><% end %>
+
 <main>
   <div class="activity row margin-top">
     <div class="small-12 column">
@@ -15,7 +17,7 @@
       <% end %>
 
       <h2 class="inline-block">
-        <%= avatar_image(@user, seed: @user.id, size: 60) %>
+        <%= render Shared::AvatarComponent.new(@user, size: 60) %>
         <%= @user.name %>
         <% if current_user&.administrator? %>
           <small><%= @user.email %></small>
