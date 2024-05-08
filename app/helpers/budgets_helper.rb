@@ -57,7 +57,7 @@ module BudgetsHelper
 
   def budget_subnav_items_for(budget)
     {
-      results: t("budgets.results.link"),
+      results: t("budgets.results.link")
       #stats: t("stats.budgets.link"),
       #executions: t("budgets.executions.link")
     }.select { |section, _| can?(:"read_#{section}", budget) }.map do |section, text|
