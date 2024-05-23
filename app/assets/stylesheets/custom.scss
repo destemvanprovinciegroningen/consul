@@ -197,14 +197,14 @@ h6,
 
     @include breakpoint(large) {
       background-position: right -150px bottom 0;
-      min-height: $line-height * 30;
+      min-height: 0;
     }
 
     h1 {
       font-size: rem-calc(36);
 
       @include breakpoint(large) {
-        font-size: rem-calc(90);
+        font-size: rem-calc(50);
       }
     }
 
