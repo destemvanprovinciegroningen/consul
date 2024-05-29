@@ -16,7 +16,7 @@ describe "SDG Goals" do
       within("#navigation_bar") { expect(page).not_to have_link "SDG" }
     end
 
-    scenario "routes to the goals index" do
+    scenario "routes to the goals index", :consul do
       visit root_path
       within("#navigation_bar") { click_link "SDG" }
 

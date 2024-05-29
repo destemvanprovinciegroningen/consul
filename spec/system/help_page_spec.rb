@@ -2,7 +2,7 @@ require "rails_helper"
 
 describe "Help page" do
   context "Index" do
-    scenario "Help menu and page is visible if feature is enabled" do
+    scenario "Help menu and page is visible if feature is enabled", :consul do
       Setting["feature.help_page"] = true
       Setting["org_name"] = "CONSUL"
 
@@ -36,7 +36,7 @@ describe "Help page" do
     within("#proposals") { expect(page).to have_css "img" }
   end
 
-  scenario "renders the SDG help page link when the feature is enabled" do
+  scenario "renders the SDG help page link when the feature is enabled", :consul do
     Setting["feature.help_page"] = true
     Setting["feature.sdg"] = true
 
@@ -48,7 +48,7 @@ describe "Help page" do
     expect(page).to have_link "Sustainable Development Goals help", href: sdg_help_path
   end
 
-  scenario "does not render the SDG help page link when the feature is disabled" do
+  scenario "does not render the SDG help page link when the feature is disabled", :consul do
     Setting["feature.sdg"] = nil
 
     visit root_path
