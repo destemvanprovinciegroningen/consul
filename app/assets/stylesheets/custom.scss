@@ -348,8 +348,12 @@ h6,
   background: $brand;
   padding-top: $line-height * 3;
 
+  p {
+    text-align: left;
+  }
+
   .footer-title {
-    color: $brand-secondary;
+    color: #fff;
   }
 
   .social {
