@@ -7,12 +7,12 @@ describe "Poll Votation Type" do
     login_as(author)
   end
 
-  scenario "Unique answer", :consul do
+  scenario "Unique answer" do
     question = create(:poll_question_unique, :yes_no)
 
     visit poll_path(question.poll)
 
-    expect(page).to have_content "You can select a maximum of 1 answer."
+    expect(page).not_to have_content "You can select a maximum of 1 answer."
     expect(page).to have_content(question.title)
     expect(page).to have_button("Vote Yes")
     expect(page).to have_button("Vote No")
@@ -30,11 +30,11 @@ describe "Poll Votation Type" do
     end
   end
 
-  scenario "Multiple answers", :consul do
+  scenario "Multiple answers" do
     question = create(:poll_question_multiple, :abc, max_votes: 2)
     visit poll_path(question.poll)
 
-    expect(page).to have_content "You can select a maximum of 2 answers."
+    expect(page).not_to have_content "You can select a maximum of 2 answers."
     expect(page).to have_content(question.title)
     expect(page).to have_button("Vote Answer A")
     expect(page).to have_button("Vote Answer B")
