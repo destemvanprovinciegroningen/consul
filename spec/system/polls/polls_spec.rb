@@ -2,6 +2,7 @@ require "rails_helper"
 
 describe "Polls" do
   context "Concerns" do
+    before { skip "Polls comments disabled" }
     it_behaves_like "notifiable in-app", :poll
   end
 

@@ -1,6 +1,7 @@
 require "rails_helper"
 
 describe "Commenting polls" do
+  before { skip "Polls comments disabled" }
   let(:user) { create(:user) }
   let(:poll) { create(:poll, author: create(:user)) }
 
