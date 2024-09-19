@@ -1,13 +1,13 @@
 nl:
   mailers:
+    sincerely: "Met vriendelijke groet"
     budget_investment_created:
       subject: "Bedankt voor het delen van je idee!"
       title: "Bedankt voor het delen van je idee!"
-      intro: "Beste <strong>%{author}</strong>,"
+      hi: "Beste <strong>%{author}</strong>,"
       text: "Bedankt voor het delen van je idee <strong>%{investment}</strong> <strong>%{budget}</strong>."
       follow: "We houden je op de hoogte van het proces. Je kunt dit ook volgen op <strong>%{link}</strong>."
       follow_link: "Ideeën"
-      sincerely: ""
       share: "Deel"
     config:
       notifications_link: "Mijn profiel"
@@ -15,23 +15,22 @@ nl:
     budget_investment_selected:
       subject: "Gefeliciteerd, idee '%{code}' gaat door naar de stemronde!"
       title: "Gefeliciteerd, je idee gaat door naar de stemronde!"
-      hi: "Beste deelnemer,"
+      hi: "Beste <strong>%{author}</strong>,"
       share: "Gefeliciteerd, jouw idee is haalbaar! Je kunt nu beginnen met je campagne. Deel je idee op social media en met je buren. Veel succes!"
       share_button: "Deel je idee"
       sincerely: "Groeten"
       thanks: "Bedankt voor het meedoen."
     budget_investment_unfeasible:
       subject: "Helaas, jouw idee is niet haalbaar"
-      hi: "Beste deelnemer,"
+      hi: "Beste <strong>%{author}</strong>,"
       new: "Helaas blijkt dat je idee niet haalbaar is. We leggen %{url} ook uit waarom."
       new_href: " hier"
       contact: "We hopen dat dit duidelijk is. Heb je toch nog vragen? Mail dan naar %{email}, we denken graag met je mee."
       sincerely: "Groeten"
     budget_investment_unselected:
       subject: "Helaas heeft je idee het niet gehaald"
-      hi: "Beste deelnemer,"
+      hi: "Beste <strong>%{author}</strong>,"
       thanks: "Helaas heeft je idee niet genoeg stemmen gekregen om door te gaan. Heel erg bedankt voor het delen van je idee."
-      sincerely: "Groeten"
     comment:
       subject: "Iemand heeft gereageerd op je idee %{commentable}"
       title: "Iemand heeft gereageerd op je idee"
@@ -45,10 +44,12 @@ nl:
     direct_message_for_receiver:
       subject: "Je hebt een nieuw privébericht ontvangen"
       title: "Je hebt een nieuw privébericht ontvangen."
-      unsubscribe_text: "Als je geen directe boodschappen wilt ontvangen, kijk dan eens bij %{notifications} en haal het vinkje weg bij 'ontvangen e-mails over directe berichten'."
+      hi: "Beste <strong>%{receiver}</strong>,"
+      unsubscribe: "Als je geen directe boodschappen wilt ontvangen, kijk dan eens bij %{notifications} en haal het vinkje weg bij 'ontvangen e-mails over directe berichten'."
     direct_message_for_sender:
       subject: "Je hebt een privébericht gestuurd"
       title: "Je hebt een privébericht gestuurd"
+      hi: "Beste <strong>%{sender}</strong>,"
       text: "Je hebt het volgende privébericht gestuurd naar <strong>%{receiver}</strong>:"
     user_invite:
       subject: "Welkom op de %{org_name}"
@@ -58,6 +59,7 @@ nl:
       ignore: "Heb je deze uitnodiging ongevraagd ontvangen? Geen zorgen, dan kun je deze mail negeren.  "
       thanks: "Bedankt!"
     email_verification:
+      hi: "Beste <strong>%{user}</strong>,"
       subject: "Bevestig je e-mailadres"
       title: "Bevestig je e-mailadres"
       text: "Bevestig je account door de volgende link te gebruiken."

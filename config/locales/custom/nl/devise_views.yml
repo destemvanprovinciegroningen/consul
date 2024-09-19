@@ -14,8 +14,6 @@ nl:
     shared:
       sign_in: "Inloggen bestaand account"
       sign_up: "Registreren nieuw account"
-      not_organization: "Vertegenwoordig je geen organisatie of collectief? Registreer je dan %{link}."
-      not_organization_link: "hier"
       links:
         new_confirmation: "Heb je geen link ontvangen in je mail? Misschien is deze in je spamfolder gekomen. Ook niet? %{link}."
         new_confirmation_link: "Klik dan hier"
