@@ -26,7 +26,7 @@
 
   <p style="<%= css_for_mailer_text %>">
     <%= sanitize(t("mailers.budget_investment_unfeasible.contact",
-                 email: mail_to(setting["mailer_from_address"], style: css_for_mailer_link)),
+                   email: mail_to(setting["mailer_from_address"], style: css_for_mailer_link)),
                  attributes: %w[href style]) %>
   </p>
 

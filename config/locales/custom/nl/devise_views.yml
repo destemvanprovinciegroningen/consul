@@ -48,7 +48,6 @@ nl:
           terms_title: "Ik accepteer de gebruiksvoorwaarden"
           submit: "Registreren"
           username_label: "Gebruikersnaam"
-          username_note: "De opgegeven naam zal zichtbaar zijn voor andere gebruikers"
         success:
           title: "Verifieer je e-mailadres"
           instructions_1: "Bekijk je mailbox - we hebben een mail gestuurd met een link om je e-mailadres te verifiëren."

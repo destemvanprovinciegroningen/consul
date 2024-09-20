@@ -16,9 +16,9 @@
   <% if controller_name == "passwords" %>
     <%= sanitize(t("devise_views.shared.links.not_received")) %>
   <%- elsif devise_mapping.confirmable? && controller_name != "confirmations" %>
-    <%= sanitize(t("devise_views.shared.links.new_confirmation",
-                    link: link_to(t("devise_views.shared.links.new_confirmation_link"),
-                                  new_confirmation_path(resource_name)))) %>
+    <%= t("devise_views.shared.links.new_confirmation") %>
+    <%= link_to(t("devise_views.shared.links.new_confirmation_link"),
+                new_confirmation_path(resource_name)) %>
       <br>
   <% end -%>
 

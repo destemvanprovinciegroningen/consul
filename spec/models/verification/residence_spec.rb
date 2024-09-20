@@ -1,10 +1,12 @@
 require "rails_helper"
 
 describe Verification::Residence do
-  let!(:geozone) { create(:geozone, census_code: "01") }
   let(:residence) { build(:verification_residence, document_number: "12345678Z") }
 
-  before { Zipcode.create!(code: "28013") }
+  before do
+    Zipcode.create!(code: "28013")
+    create(:geozone, census_code: "01")
+  end
 
   describe "validations" do
     it "is valid" do

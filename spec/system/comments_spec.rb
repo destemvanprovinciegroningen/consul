@@ -6,7 +6,7 @@ describe "Comments" do
     :debate,
     :legislation_annotation,
     :legislation_question,
-    :poll_with_author,
+    #:poll_with_author, Poll comments disabled
     :proposal,
     :topic_with_community,
     :topic_with_investment_community
@@ -36,7 +36,7 @@ describe "Comments" do
     end
   end
 
-  it_behaves_like "flaggable", :"#{(factories - [:poll_with_author]).sample}_comment"
+  it_behaves_like "flaggable", :"#{factories.sample}_comment"
 
   describe "Index" do
     context "Budget Investments" do
