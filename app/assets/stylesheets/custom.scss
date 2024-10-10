@@ -84,7 +84,8 @@ h6,
 
   li {
 
-    a, a * {
+    a,
+    a * {
       color: $brand-light;
 
       &.is-active {
@@ -113,10 +114,6 @@ h6,
       }
     }
   }
-}
-
-.cke_path {
-  display: none;
 }
 
 // 1. Header
