@@ -602,11 +602,21 @@ h6,
 // 11. Polls
 // --------------------
 
-.poll-more-info-answers {
+.poll-more-info-options {
 
-  .column:only-child {
-    width: 100%;
+  .option {
+    min-height: rem-calc(400);
   }
+
+  .column:nth-child(odd),
+  .columns:nth-child(odd) {
+    border-right: 0;
+  }
+}
+
+.poll-question .button {
+  text-align: left;
+  width: 100%;
 }
 
 // 12. Icons
