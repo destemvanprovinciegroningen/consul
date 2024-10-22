@@ -9,7 +9,7 @@
 
       <h1><%= poll.name %></h1>
 
-      <%= auto_link_already_sanitized_html simple_format(poll.summary) %>
+      <%= auto_link_already_sanitized_html AdminWYSIWYGSanitizer.new.sanitize(poll.summary) %>
 
       <%= render Polls::GeozonesComponent.new(poll) %>
 
