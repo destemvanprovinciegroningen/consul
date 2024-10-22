@@ -211,5 +211,15 @@ describe "Polls" do
 
       expect(page).to have_css "img[alt='The yes movement']"
     end
+
+    scenario "Back button returns to previous page" do
+      poll = create(:poll)
+
+      visit root_path
+      visit poll_path(poll)
+
+      click_link "Go back"
+      expect(page).to have_current_path(root_path)
+    end
   end
 end
